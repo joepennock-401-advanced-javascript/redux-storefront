@@ -1,7 +1,8 @@
 import React from 'react';
 import Storefront from './components/storefront/storefront.js';
 
-function App() {
+function App(store) {
+console.log(store);
   return (
     <>
       <Storefront />
