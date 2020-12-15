@@ -11,8 +11,6 @@ function Storefront (props) {
   const categories = useSelector( state => state.categories);
   console.log(categories);
 
-  // const dispatch = useDispatch();
-
   return (
     <>
       <Header />
