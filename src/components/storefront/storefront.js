@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../header/header.js';
+import Main from '../main/main.js';
 import Footer from '../footer/footer.js';
 import {useSelector} from 'react-redux';
 
@@ -10,11 +11,10 @@ function Storefront (props) {
   const categories = useSelector( state => state.categories);
   console.log(categories);
 
-  // const dispatch = useDispatch();
-
   return (
     <>
       <Header />
+      <Main/>
         {/* {dispatch( products.addProduct(newProduct) )} */}
       <Footer />
     </>
