@@ -10,6 +10,8 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
+import {useSelector} from 'react-redux';
+
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -43,9 +45,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
 export default function Electronics() {
+  const products = useSelector( state => state.products);
+  
   const classes = useStyles();
 
   return (
@@ -66,7 +68,7 @@ export default function Electronics() {
         <Container className={classes.cardGrid} maxWidth="md">
           {/* End hero unit */}
           <Grid container spacing={4}>
-            {cards.map((card) => (
+            {products.products.map((card) => (
               <Grid item key={card} xs={12} sm={6} md={4}>
                 <Card className={classes.card}>
                   <CardMedia
@@ -75,16 +77,16 @@ export default function Electronics() {
                     title="Image title"
                   />
                   <CardContent className={classes.cardContent}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      Heading
+                    <Typography gutterBottom variant="h5" component="h2"> 
+                      {card}                 
                     </Typography>
-                    <Typography>
-                      This is a media card. You can use this section to describe the content.
+                    <Typography>  
+                      add a loop through for each description
                     </Typography>
                   </CardContent>
                   <CardActions>
                     <Button size="small" color="primary">
-                      View
+                      Add
                     </Button>
                     <Button size="small" color="primary">
                       Edit
